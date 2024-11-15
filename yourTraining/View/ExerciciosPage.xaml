@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="yourTraining.View.ExerciciosPage"             
+             BackgroundColor="MidnightBlue">
+
+    <ScrollView>
+        <VerticalStackLayout            
+            Padding="10">
+
+            <Border
+                Margin="0, 0, 0, 50"
+                StrokeShape="RoundRectangle 50, 5, 5, 50"
+                Padding="5"
+                BackgroundColor="MediumBlue"
+                Stroke="Transparent">
+                
+                <Label 
+                    Text="ESCOLHA OS EXERCÍCIOS PARA SUA FICHA DE TREINO"
+                    FontAttributes="Bold"
+                    TextColor="White"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Center"/>
+
+            </Border>
+
+            <Border
+                Margin="0, 0, 0, 10"
+                StrokeShape="RoundRectangle 10, 10, 10, 10"
+                Padding="5"
+                BackgroundColor="MediumBlue"
+                Stroke="Transparent">
+
+                <Label
+                    Text="EXERCÍCIOS PARA PEITO"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    TextColor="White"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Center"/>
+
+            </Border>
+
+            <Border
+                Margin="0, 0, 0, 50"
+                Stroke="Orange"
+                StrokeShape="RoundRectangle 5, 5, 5, 5">
+                
+                <CollectionView
+                ItemsSource="{Binding ListaExerciciosPeito}"
+                SelectionMode="Single"
+                SelectionChanged="CollectionView_SelectionChanged">
+
+                    <CollectionView.ItemTemplate>
+                    <DataTemplate>
+
+                            <Border Stroke="Transparent" StrokeShape="RoundRectangle 5, 5, 5, 5">
+                                <StackLayout
+                                    Padding="15"
+                                    Spacing="10"
+                                    BackgroundColor="MediumBlue">
+
+                                        <Label Text="{Binding Nome}" FontSize="20" TextColor="White"/>
+                                        <Label Text="{Binding GrupoMuscular}" FontSize="18" TextColor="White"/>
+
+                            </StackLayout>
+                            </Border>
+                        
+                        </DataTemplate>
+                </CollectionView.ItemTemplate>
+                
+            </CollectionView>
+            </Border>
+
+            <Border
+                Margin="0, 0, 0, 10"
+                StrokeShape="RoundRectangle 10, 10, 10, 10"
+                Padding="5"
+                BackgroundColor="MediumBlue"
+                Stroke="Transparent">
+
+                <Label 
+                    Text="EXERCÍCIOS PARA COSTA"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    TextColor="White"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Center"/>
+
+            </Border>
+
+            <Border
+                Margin="0, 0, 0, 50"
+                Stroke="Orange"
+                StrokeShape="RoundRectangle 5, 5, 5, 5">
+
+                <CollectionView
+                    ItemsSource="{Binding ListaExerciciosCosta}"
+                    SelectionMode="Single"
+                    SelectionChanged="CollectionView_SelectionChanged">
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+
+                            <Border Stroke="Transparent" StrokeShape="RoundRectangle 5, 5, 5, 5">
+                                <StackLayout
+                                    Padding="15"
+                                    Spacing="10"
+                                    BackgroundColor="MediumBlue">
+
+                                     <Label Text="{Binding Nome}" FontSize="20" TextColor="White"/>
+                                     <Label Text="{Binding GrupoMuscular}" FontSize="18" TextColor="White"/>
+
+                                </StackLayout>
+                            </Border>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+
+                </CollectionView>
+            </Border>
+
+            <Border
+                Margin="0, 0, 0, 10"
+                StrokeShape="RoundRectangle 10, 10, 10, 10"
+                Padding="5"
+                BackgroundColor="MediumBlue"
+                Stroke="Transparent">
+
+                <Label 
+                    Text="EXERCÍCIOS PARA TRAPÉZIO"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    TextColor="White"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Center"/>
+
+            </Border>
+
+            <Border
+                Margin="0, 0, 0, 50"
+                Stroke="Orange"
+                StrokeShape="RoundRectangle 5, 5, 5, 5">
+
+                <CollectionView
+                    ItemsSource="{Binding ListaExerciciosTrapezio}"
+                    SelectionMode="Single"
+                    SelectionChanged="CollectionView_SelectionChanged">
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+
+                            <Border Stroke="Transparent" StrokeShape="RoundRectangle 5, 5, 5, 5">
+                                <StackLayout
+                                    Padding="15"
+                                    Spacing="10"
+                                    BackgroundColor="MediumBlue">
+
+                                    <Label Text="{Binding Nome}" FontSize="20" TextColor="White"/>
+                                    <Label Text="{Binding GrupoMuscular}" FontSize="18" TextColor="White"/>
+
+                                </StackLayout>
+                            </Border>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+
+                </CollectionView>
+            </Border>
+
+            <Border
+                Margin="0, 0, 0, 10"
+                StrokeShape="RoundRectangle 10, 10, 10, 10"
+                Padding="5"
+                BackgroundColor="MediumBlue"
+                Stroke="Transparent">
+
+                <Label 
+                    Text="EXERCÍCIOS PARA OMBRO"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    TextColor="White"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Center"/>
+
+            </Border>
+
+            <Border
+                Margin="0, 0, 0, 50"
+                Stroke="Orange"
+                StrokeShape="RoundRectangle 5, 5, 5, 5">
+
+                <CollectionView
+                    ItemsSource="{Binding ListaExerciciosOmbro}"
+                    SelectionMode="Single"
+                    SelectionChanged="CollectionView_SelectionChanged">
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+
+                            <Border Stroke="Transparent" StrokeShape="RoundRectangle 5, 5, 5, 5">
+                                <StackLayout
+                                    Padding="15"
+                                    Spacing="10"
+                                    BackgroundColor="MediumBlue">
+
+                                    <Label Text="{Binding Nome}" FontSize="20" TextColor="White"/>
+                                    <Label Text="{Binding GrupoMuscular}" FontSize="18" TextColor="White"/>
+
+                                </StackLayout>
+                            </Border>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+
+                </CollectionView>
+            </Border>
+
+            <Border
+                Margin="0, 0, 0, 10"
+                StrokeShape="RoundRectangle 10, 10, 10, 10"
+                Padding="5"
+                BackgroundColor="MediumBlue"
+                Stroke="Transparent">
+
+                <Label 
+                    Text="EXERCÍCIOS PARA BÍCEPS"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    TextColor="White"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Center"/>
+
+            </Border>
+
+            <Border
+                Margin="0, 0, 0, 50"
+                Stroke="Orange"
+                StrokeShape="RoundRectangle 5, 5, 5, 5">
+
+                <CollectionView
+                    ItemsSource="{Binding ListaExerciciosBiceps}"
+                    SelectionMode="Single"
+                    SelectionChanged="CollectionView_SelectionChanged">
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+
+                            <Border Stroke="Transparent" StrokeShape="RoundRectangle 5, 5, 5, 5">
+                                <StackLayout
+                                    Padding="15"
+                                    Spacing="10"
+                                    BackgroundColor="MediumBlue">
+
+                                    <Label Text="{Binding Nome}" FontSize="20" TextColor="White"/>
+                                    <Label Text="{Binding GrupoMuscular}" FontSize="18" TextColor="White"/>
+
+                                </StackLayout>
+                            </Border>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+
+                </CollectionView>
+            </Border>
+
+            <Border
+                Margin="0, 0, 0, 10"
+                StrokeShape="RoundRectangle 10, 10, 10, 10"
+                Padding="5"
+                BackgroundColor="MediumBlue"
+                Stroke="Transparent">
+
+                <Label 
+                    Text="EXERCÍCIOS PARA TRÍCEPS"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    TextColor="White"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Center"/>
+
+            </Border>
+
+            <Border
+                Margin="0, 0, 0, 50"
+                Stroke="Orange"
+                StrokeShape="RoundRectangle 5, 5, 5, 5">
+
+                <CollectionView
+                    ItemsSource="{Binding ListaExerciciosTriceps}"
+                    SelectionMode="Single"
+                    SelectionChanged="CollectionView_SelectionChanged">
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+
+                            <Border Stroke="Transparent" StrokeShape="RoundRectangle 5, 5, 5, 5">
+                                <StackLayout
+                                    Padding="15"
+                                    Spacing="10"
+                                    BackgroundColor="MediumBlue">
+
+                                    <Label Text="{Binding Nome}" FontSize="20" TextColor="White"/>
+                                    <Label Text="{Binding GrupoMuscular}" FontSize="18" TextColor="White"/>
+
+                                </StackLayout>
+                            </Border>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+
+                </CollectionView>
+            </Border>
+
+            <Border
+                Margin="0, 0, 0, 10"
+                StrokeShape="RoundRectangle 10, 10, 10, 10"
+                Padding="5"
+                BackgroundColor="MediumBlue"
+                Stroke="Transparent">
+
+                <Label 
+                    Text="EXERCÍCIOS PARA PERNA"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    TextColor="White"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Center"/>
+
+            </Border>
+
+            <Border
+                Margin="0, 0, 0, 50"
+                Stroke="Orange"
+                StrokeShape="RoundRectangle 5, 5, 5, 5">
+
+                <CollectionView
+                    ItemsSource="{Binding ListaExerciciosPerna}"
+                    SelectionMode="Single"
+                    SelectionChanged="CollectionView_SelectionChanged">
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+
+                            <Border Stroke="Transparent" StrokeShape="RoundRectangle 5, 5, 5, 5">
+                                <StackLayout
+                                    Padding="15"
+                                    Spacing="10"
+                                    BackgroundColor="MediumBlue">
+
+                                    <Label Text="{Binding Nome}" FontSize="20" TextColor="White"/>
+                                    <Label Text="{Binding GrupoMuscular}" FontSize="18" TextColor="White"/>
+
+                                </StackLayout>
+                            </Border>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+
+                </CollectionView>
+            </Border>
+
+            <Border
+                Margin="0, 0, 0, 10"
+                StrokeShape="RoundRectangle 10, 10, 10, 10"
+                Padding="5"
+                BackgroundColor="MediumBlue"
+                Stroke="Transparent">
+
+                <Label 
+                    Text="EXERCÍCIOS PARA GLÚTEO"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    TextColor="White"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Center"/>
+
+            </Border>
+
+            <Border
+                Margin="0, 0, 0, 50"
+                Stroke="Orange"
+                StrokeShape="RoundRectangle 5, 5, 5, 5">
+
+                <CollectionView
+                    ItemsSource="{Binding ListaExerciciosGluteo}"
+                    SelectionMode="Single"
+                    SelectionChanged="CollectionView_SelectionChanged">
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+
+                            <Border Stroke="Transparent" StrokeShape="RoundRectangle 5, 5, 5, 5">
+                                <StackLayout
+                                    Padding="15"
+                                    Spacing="10"
+                                    BackgroundColor="MediumBlue">
+
+                                    <Label Text="{Binding Nome}" FontSize="20" TextColor="White"/>
+                                    <Label Text="{Binding GrupoMuscular}" FontSize="18" TextColor="White"/>
+
+                                </StackLayout>
+                            </Border>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+
+                </CollectionView>
+            </Border>
+
+            <Border
+                Margin="0, 0, 0, 10"
+                StrokeShape="RoundRectangle 10, 10, 10, 10"
+                Padding="5"
+                BackgroundColor="MediumBlue"
+                Stroke="Transparent">
+
+                <Label 
+                    Text="EXERCÍCIOS PARA PANTURRILHA"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    TextColor="White"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Center"/>
+
+            </Border>
+
+            <Border
+                Margin="0, 0, 0, 50"
+                Stroke="Orange"
+                StrokeShape="RoundRectangle 5, 5, 5, 5">
+
+                <CollectionView
+                    ItemsSource="{Binding ListaExerciciosPanturrilha}"
+                    SelectionMode="Single"
+                    SelectionChanged="CollectionView_SelectionChanged">
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+
+                            <Border Stroke="Transparent" StrokeShape="RoundRectangle 5, 5, 5, 5">
+                                <StackLayout
+                                    Padding="15"
+                                    Spacing="10"
+                                    BackgroundColor="MediumBlue">
+
+                                    <Label Text="{Binding Nome}" FontSize="20" TextColor="White"/>
+                                    <Label Text="{Binding GrupoMuscular}" FontSize="18" TextColor="White"/>
+
+                                </StackLayout>
+                            </Border>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+
+                </CollectionView>
+            </Border>
+
+            <Border
+                Margin="0, 0, 0, 10"
+                StrokeShape="RoundRectangle 10, 10, 10, 10"
+                Padding="5"
+                BackgroundColor="MediumBlue"
+                Stroke="Transparent">
+
+                <Label 
+                    Text="EXERCÍCIOS PARA ABDOMEN"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    TextColor="White"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Center"/>
+
+            </Border>
+
+            <Border
+                Margin="0, 0, 0, 50"
+                Stroke="Orange"
+                StrokeShape="RoundRectangle 5, 5, 5, 5">
+
+                <CollectionView
+                    ItemsSource="{Binding ListaExerciciosAbdomen}"
+                    SelectionMode="Single"
+                    SelectionChanged="CollectionView_SelectionChanged">
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+
+                            <Border Stroke="Transparent" StrokeShape="RoundRectangle 5, 5, 5, 5">
+                                <StackLayout
+                                    Padding="15"
+                                    Spacing="10"
+                                    BackgroundColor="MediumBlue">
+
+                                    <Label Text="{Binding Nome}" FontSize="20" TextColor="White"/>
+                                    <Label Text="{Binding GrupoMuscular}" FontSize="18" TextColor="White"/>
+
+                                </StackLayout>
+                            </Border>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+
+                </CollectionView>
+            </Border>
+
+            <Border
+                Margin="0, 0, 0, 10"
+                StrokeShape="RoundRectangle 10, 10, 10, 10"
+                Padding="5"
+                BackgroundColor="MediumBlue"
+                Stroke="Transparent">
+
+                <Label 
+                    Text="EXERCÍCIOS PARA CARDIO"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    TextColor="White"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Center"/>
+
+            </Border>
+
+            <Border
+                Margin="0, 0, 0, 50"
+                Stroke="Orange"
+                StrokeShape="RoundRectangle 5, 5, 5, 5">
+
+                <CollectionView
+                    ItemsSource="{Binding ListaExerciciosCardio}"
+                    SelectionMode="Single"
+                    SelectionChanged="CollectionView_SelectionChanged">
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+
+                            <Border Stroke="Transparent" StrokeShape="RoundRectangle 5, 5, 5, 5">
+                                <StackLayout
+                                    Padding="15"
+                                    Spacing="10"
+                                    BackgroundColor="MediumBlue">
+
+                                    <Label Text="{Binding Nome}" FontSize="20" TextColor="White"/>
+                                    <Label Text="{Binding GrupoMuscular}" FontSize="18" TextColor="White"/>
+
+                                </StackLayout>
+                            </Border>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+
+                </CollectionView>
+            </Border>
+
+            <Button 
+                x:Name="btnFichaTreino"
+                Text="FICHA DE TREINO"
+                FontAttributes="Bold"
+                TextColor="White"
+                BackgroundColor="MediumBlue"
+                HorizontalOptions="Center"
+                Clicked="btnFichaTreino_Clicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

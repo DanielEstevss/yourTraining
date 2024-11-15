@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="yourTraining.View.FichaTreinoPage"
+             BackgroundColor="DarkBlue">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="10">
+
+            <Border
+                Margin="0, 0, 0, 30"
+                StrokeShape="RoundRectangle 50, 5, 5, 50"
+                WidthRequest="200"
+                Padding="5"
+                BackgroundColor="MediumBlue"
+                Stroke="Transparent">
+
+                <Label 
+                    Text="FICHA DE TREINO"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    TextColor="White"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Center"/>
+
+            </Border>
+
+            <Border Stroke="Transparent" StrokeShape="RoundRectangle 5, 5, 5, 5" Margin="0, 0, 0, 40">
+                <CollectionView ItemsSource = "{Binding ExerciciosSelecionados}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+
+                            <Border Stroke="Transparent" StrokeShape="RoundRectangle 5, 5, 5, 5">
+                                <StackLayout
+                                    Padding="10"
+                                    Spacing="15"
+                                    BackgroundColor="MediumBlue">
+
+                                    <Label Text="{Binding Nome}" FontSize="20" TextColor="White"/>
+                                    <Label Text="{Binding GrupoMuscular}" FontSize="18" TextColor="White"/>
+
+                                </StackLayout>
+                            </Border>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Border>
+
+            <Button 
+                x:Name="btnLimpar"
+                Text="LIMPAR"
+                FontAttributes="Bold"
+                TextColor="White"
+                BackgroundColor="MediumBlue"
+                HorizontalOptions="Center"
+                Clicked="btnLimpar_Clicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
